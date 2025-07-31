@@ -1,50 +1,55 @@
-import React  from "react";
-import './Home.css'
-
-
+import React from 'react';
 class Counter extends React.Component {
     constructor(props) {
-        super(props) ;
-        this.state = {Counter : 1 } ;
+        super(props);
+        this.state = { counter: 1 };
+        console.log("constructor Called")
+    }
+    incrementData() {
+        if (this.state.counter > 3) {
+            this.setState({ msg: "Sorry Value is > 3" })
+        } else {
+            this.setState({ counter: this.state.counter + 1, msg: '' })
+        }
+    }
+    decrementData() {
+        if (this.state.counter < 1) {
+            this.setState({ msg: "Sorry Value is < 1" })
+        } else {
+            this.setState({ counter: this.state.counter - 1, msg: '' })
+        }
     }
 
-    increment () {
-        if(this.state.Counter > 3) {
-            this.setState({msg : "Sorry Bhai Kale Try Karje "})
-        }
-        else {
-            this.setState({Counter : this.state.Counter +1 , msg : " "})
-        }
+    componentDidMount() {
+        console.log("Component Did Mount Called")
     }
 
-    decrement () {
-        if(this.state.Counter < 1) {
-            this.setState({msg : "Sorry Bhai Kale Try Karje "})
-        }
-        else {
-            this.setState({Counter : this.state.Counter  - 1 , msg : " "})
-        }
+    componentDidUpdate() {
+        console.log("ComponentDidUpdated Called")
     }
     render() {
-        var a = 10 
+        console.log("Render Called")
+
+        var a = 10
         return (
             <>
-            <h1>Counter APP </h1>
+                <h1>Counter App</h1>
+                A Value is {a}
+                Counter Value is {this.state.counter} <br />
+                <input type='button' value="+" onClick={this.incrementData.bind(this)} />
+                <input type='button' value="-" onClick={this.decrementData.bind(this)} />
+                <br />
+                <p style={{ color: 'red' }}> {this.state.msg}</p>
 
-            A value is {a} 
+                <hr />
+                <input type='button' value="+"
+                    onClick={() => this.setState({ counter: this.state.counter + 1 })} />
 
-            <br></br>
+                <input type='button' value="-"
+                    onClick={() => this.setState({ counter: this.state.counter - 1 })} />
 
-            Counter Value is {this.state.Counter} <br/>
-            <input type="button" value = "+" onClick={this.increment.bind(this)} />
-            <br></br>
-            <input type="button" value = "-" onClick={this.decrement.bind(this)} />
-            <br></br>
-            <p style={{color : 'red'}} > {this.state.msg}</p>
             </>
-        )
+        );
     }
 }
-
-export default Counter ; 
-
+export default Counter;
