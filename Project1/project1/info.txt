@@ -1,0 +1,12 @@
+Hooks :
+Hooks is Special function in react js to manage state inside function compenent.
+
+Using Hooks Dynamically we can change Variable Value in function compenent . 
+
+useState : To manage state in react function compenent 
+useEffect : To manage Lifecycle in function compenent 
+
+Example : 
+    const [Value , setValue] = react.useState(0)
+    Value is Variable 
+    setValue is function to update Value 
