@@ -9,10 +9,12 @@ import Sumdemo from './Sumdemo.jsx'
 import Counter2 from './Counter2.jsx'
 import Sum2 from './Sum2.jsx'
 import Hookdemo from './Hookdemo.jsx'
-import Sumdemo3 from '../Sumdemo3.jsx'
+import Sumdemo3 from './Sumdemo3.jsx'
+import Signup from './Signup.jsx'
+import Login from './Login.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
- <Sumdemo3/>
+    <App/>
   </StrictMode>,
 )

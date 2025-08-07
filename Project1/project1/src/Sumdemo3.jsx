@@ -1,20 +1,20 @@
 import React  from "react";
 
-function Sumdemo() {
+function Sumdemo3() {
     
     const [no1 , setNo1] = React.useState(0)
     const [no2 , setNo2] = React.useState(0)
-    const [chocie , setChoice] = React.useState("")
+    const [choice , setChoice] = React.useState("")
     const [ans , setAns] = React.useState("")
 
     const doProcess = () => {
-        if(chocie == "add") {
+        if(choice == "add") {
             var c = parseInt(no1) + parseInt(no2) 
             setAns("Sum is "+ c)
         }
-        else if(chocie == "sub") {
+        else if(choice == "sub") {
             var c = parseInt(no1) - parseInt(no2) 
-            setAns("Sum is "+ c)
+            setAns("Difference is "+ c)
         }
         else {
             setAns("Select Choice")
@@ -40,4 +40,4 @@ function Sumdemo() {
 
 }
 
-export default Sumdemo
+export default Sumdemo3
